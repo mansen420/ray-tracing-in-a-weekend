@@ -17,12 +17,14 @@ public:
 	double viewPortWidth = viewPortHeight * aspectRatio;
 
 	Vec3 horizontalOffset = Vec3(viewPortWidth, 0, 0);
-	Vec3 verticalOffset = Vec3(0, viewPortHeight, 0);
+	Vec3 verticalOffset = Vec3(0, -viewPortHeight, 0);
 	Point origin = Point(0, 0, 0);
-	Point lowerLeftCorner = origin - (0.5 * horizontalOffset) - (0.5 * verticalOffset) - Vec3(0, 0, focalLength);
+	Point upperLeftCorner = origin - (0.5 * horizontalOffset) - (0.5 * verticalOffset) - Vec3(0, 0, focalLength);
+
+
 	Ray viewportTraversal(double u, double v)
 	{
-		return Ray(origin, lowerLeftCorner + u * horizontalOffset + v * verticalOffset - origin);
+		return Ray(origin, upperLeftCorner + u * horizontalOffset + v * verticalOffset - origin);
 	}
 };
 #endif // !CAMERA

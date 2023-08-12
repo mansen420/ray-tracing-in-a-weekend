@@ -39,9 +39,9 @@ int main()
 	objects.add(make_shared<Sphere>(Point(R, 0, -1), R, material_right));
 
 	init(imageHeight, imageWidth);
-	for (int i = imageHeight - 1; i >= 0; i--)
+	for (int i = 0; i < imageHeight; i++)
 	{
-	std::cerr << "\rLines remaining : " << i << "\n" << std::flush;
+	std::cerr << "\rLines remaining : " << imageHeight-i << "\n" << std::flush;
 		for (int j = 0; j < imageWidth; j++)
 		{
 			Color baseColor(0, 0, 0);
