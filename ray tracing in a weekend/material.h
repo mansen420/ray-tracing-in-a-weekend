@@ -22,7 +22,7 @@ public:
 		if (scatterDirection.near_zero())
 			scatterDirection = record.normal;
 		scatteredRay = Ray(record.p, scatterDirection);
-		attenuation = albedo;
+		attenuation = 0.7*albedo; 
 		return true;
 	}
 };

@@ -21,22 +21,24 @@ int main()
 	Camera cam;
 	//world objects
 	HittableList objects;
-	/* auto material_ground = make_shared<Lambertian>(Color(0.8, 0.8, 0.0));
-	auto material_center = make_shared<Lambertian>(Color(0.1, 0.2, 0.5));
-	auto material_left = make_shared<Dielectric>(1.5);
-	auto material_right = make_shared<Metal>(Color(0.8, 0.6, 0.2), 0.0);
+	auto material_ground = make_shared<Lambertian>(Color(1, 1, 1));
+	auto material_center = make_shared<Metal>(Color(1, 0.9, 0.85));
+	auto material_left = make_shared<Lambertian>(Color(0.2,0.2,0.9));
+	auto material_right = make_shared<Lambertian>(Color(0.9, 0.2, 0.2));
 
 	objects.add(make_shared<Sphere>(Point(0.0, -100.5, -1.0), 100.0, material_ground));
 	objects.add(make_shared<Sphere>(Point(0.0, 0.0, -1.0), 0.5, material_center));
-	objects.add(make_shared<Sphere>(Point(-1.0, 0.0, -1.0), 0.5, material_left));
-	objects.add(make_shared<Sphere>(Point(1.0, 0.0, -1.0), 0.5, material_right)); */
-	auto R = cos(pi / 4);
+	objects.add(make_shared<Sphere>(Point(0.3, 0.5, -0.5), 0.1, material_left));
+	objects.add(make_shared<Sphere>(Point(-0.3, 0.1, -0.5), 0.1, material_right));
+
+
+	/* auto R = cos(pi / 4);
 
 	auto material_left = make_shared<Lambertian>(Color(0, 0, 1));
 	auto material_right = make_shared<Lambertian>(Color(1, 0, 0));
 
 	objects.add(make_shared<Sphere>(Point(-R, 0, -1), R, material_left));
-	objects.add(make_shared<Sphere>(Point(R, 0, -1), R, material_right));
+	objects.add(make_shared<Sphere>(Point(R, 0, -1), R, material_right)); */
 
 	init(imageHeight, imageWidth);
 	for (int i = 0; i < imageHeight; i++)
